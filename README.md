@@ -38,7 +38,12 @@ Ctrl-b p: Move to previous tmux window.
 Ctrl-b %: Split current pane vertically.  
 Ctrl-b ": Split current pane horizontally.  
 Ctrl-b z: Toggle between zooming and dezooming current pane.  
+Ctrl-b x: Close current pane.  
+Ctrl-b &: Close current window.  
 Ctrl-b !: Break current pane from its window and place it into a new window.  
+Ctrl-b Alt-5: Reorganise panes in a reasonable way.
+Ctrl-b space: Toggle between different pane organisations.
+Ctrl-b :join-pane -t :0 -{vh} : Join current pane to another window horizontally or vertically.
 
 
 ## Install Neovim
@@ -58,8 +63,15 @@ number f key: find the number next occurence of key (e.g f m finds next occurenc
 number w: Jump to beginning of next number word.  
 gi: restart insert mode in the last insert point used before exiting insert mode.  
 
-... Search google for useful vim/nvim commands.  
+... Search the internet for useful vim/nvim commands.  
 
-### Configure .bashrc
+## Configure .bashrc
 Copy .bashrc file to home directory (i.e ~)
+
+### Useful commands
+Ctrl-z : Suspend current process.
+fg : Awake suspended process.
+
+## Install miniconda
+Find installation instructions on the internet.
 

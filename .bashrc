@@ -1,3 +1,6 @@
+###################
+################### DEFAULT BASHRC
+###################
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -16,8 +19,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=5000
-HISTFILESIZE=10000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -85,7 +88,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -115,9 +118,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+###################
+################### DEFAULT BASHRC
+###################
+
 
 # Added by Luke - Add Miniconda to path.
-export PATH=~/miniconda3/bin:$PATH
+export PATH=$PATH:~/miniconda3/bin
 
 # Added with Fuzzy Finder setup.
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -125,8 +132,12 @@ export PATH=~/miniconda3/bin:$PATH
 # Added by Luke - Tell Fuzzy Finder to search for hidden files using ag.
 # ignore git files and only return file names.
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND 
+# Preview file before opening.
+export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
-# Added by Luke - Bash command line configuration.
+
+# Added by Luke - Bash Configuration
 ########################################
 # get current branch in git repo
 function parse_git_branch() {
@@ -178,8 +189,18 @@ function parse_git_dirty {
 export PS1="\[\e[33m\]\w\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\] "
 ################################################
 
-
-# Added by Luke - Alias for g++ with debug commands
+# Added by Luke
+# Alias for g++ with debug commands
 alias gpp='g++ -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused'
 
+
+# Added by Luke
+# Allow to access bash history.
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+# Avoid duplicates
+export HISTCONTROL=ignoreboth 
+export PROMPT_COMMAND="history -a;history -n;history -r;$PROMPT_COMMAND"
 
