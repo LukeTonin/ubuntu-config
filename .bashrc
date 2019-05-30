@@ -119,7 +119,7 @@ if ! shopt -oq posix; then
   fi
 fi
 ###################
-################### DEFAULT BASHRC
+################### END DEFAULT BASHRC
 ###################
 
 
