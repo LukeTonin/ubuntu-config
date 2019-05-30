@@ -8,7 +8,7 @@ This file contains all the steps required to setup a nice Ubuntu environment wit
 ## Install The Silver Searcher AG
 This allows to search the contents of files. It is used by Fuzzy Finder.
 ```bash
-apt-get install silversearcher-ag
+sudo apt-get install silversearcher-ag
 ```
 
 ### Useful commands
@@ -49,6 +49,12 @@ Ctrl-b :join-pane -t :0 -{vh} : Join current pane to another window horizontally
 ## Install Neovim
 ``` bash
 sudo apt-get install neovim
+```
+
+### Install neovim plugin manager
+``` bash
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 Copy neovim configuration (init.vim) to ~/.config/nvim/init.vim
