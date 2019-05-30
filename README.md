@@ -47,17 +47,21 @@ Ctrl-b :join-pane -t :0 -{vh} : Join current pane to another window horizontally
 
 
 ## Install Neovim
+Warning : neovim is in ubuntu repositories only since 18.04. For earlier versions of Ubuntu, neovim can be downloaded from a PPA.
 ``` bash
 sudo apt-get install neovim
 ```
 
-### Install neovim plugin manager
+### Install neovim plugin manager (and curl)
 ``` bash
+sudo apt-get install curl
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-Copy neovim configuration (init.vim) to ~/.config/nvim/init.vim
+Copy neovim configuration (init.vim) to ~/.config/nvim/init.vim  
+
+Install plugins decribed in init.vim with :PlugInstall  
 
 ### Useful commands
 #### From normal mode
