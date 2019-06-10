@@ -133,8 +133,15 @@ export PATH=$PATH:~/miniconda3/bin
 # ignore git files and only return file names.
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND 
-# Preview file before opening.
-export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+# fe [FUZZY PATTERN] - Open the selected file with the default editor
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fe() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
 
 
 # Added by Luke - Bash Configuration
@@ -203,4 +210,7 @@ shopt -s histverify
 # Avoid duplicates
 export HISTCONTROL=ignoreboth 
 export PROMPT_COMMAND="history -a;history -n;history -r;$PROMPT_COMMAND"
+
+# Set nvim as default editor.
+export EDITOR=/usr/bin/nvim
 
