@@ -1,6 +1,3 @@
-###################
-################### DEFAULT BASHRC
-###################
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -118,10 +115,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-###################
-################### END DEFAULT BASHRC
-###################
-
 
 # Added by Luke - Add Miniconda to path.
 export PATH=$PATH:~/miniconda3/bin
@@ -143,6 +136,13 @@ fe() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
+# fbr - checkout git branch
+fbr() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
 
 # Added by Luke - Bash Configuration
 ########################################
@@ -213,4 +213,3 @@ export PROMPT_COMMAND="history -a;history -n;history -r;$PROMPT_COMMAND"
 
 # Set nvim as default editor.
 export EDITOR=/usr/bin/nvim
-
