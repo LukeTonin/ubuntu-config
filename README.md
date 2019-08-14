@@ -14,6 +14,7 @@ sudo apt-get install silversearcher-ag
 ### Useful commands
 ag "regex pattern"  
 -g flag only returns filenames.
+-G "regex" only looks in files with "regex" in the name.
 
 ## Install Fuzzy Finder
 
@@ -83,5 +84,8 @@ Ctrl-z : Suspend current process.
 fg : Awake suspended process.
 
 ## Install miniconda
-Find installation instructions on the internet.
-
+Find installation instructions on the internet.  
+Initialize conda with:
+``` bash
+conda init
+```

@@ -116,8 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Added by Luke - Add Miniconda to path.
-export PATH=$PATH:~/miniconda3/bin
+# Added by Luke - Bash Configuration
+########################################
 
 # Added with Fuzzy Finder setup.
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -136,16 +136,15 @@ fe() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-# fbr - checkout git branch
+# fbr - checkout git branch (including remote branches)
 fbr() {
   local branches branch
-  branches=$(git --no-pager branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# Added by Luke - Bash Configuration
-########################################
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
