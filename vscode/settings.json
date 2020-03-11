@@ -1,0 +1,36 @@
+{
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[cpp]": {},
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDelete": true,
+    "vim.useCtrlKeys": false,
+    "vim.handleKeys": {
+        "<C-o>": true,
+        "<C-i>": true,
+        "<C-r>": true,
+        "<C-v>": true,
+    },
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["u"],
+            "commands": ["undo"]
+        },
+        {
+            "before": ["<C-r>"],
+            "commands": ["redo"]
+        }
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.formatting.autopep8Args": ["--aggressive", "--max-line-length", "90"],
+    "[python]": {
+        
+    },
+    "window.zoomLevel": -1,
+    "explorer.confirmDragAndDrop": false,
+    "search.exclude": {
+        ".attic": true,
+        ".archive": true,
+    },
+}
