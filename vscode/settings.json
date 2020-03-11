@@ -1,7 +1,6 @@
 {
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "[cpp]": {},
     "files.autoSave": "afterDelay",
     "explorer.confirmDelete": true,
     "vim.useCtrlKeys": false,
@@ -24,9 +23,6 @@
     ],
     "python.linting.pylintEnabled": true,
     "python.formatting.autopep8Args": ["--aggressive", "--max-line-length", "90"],
-    "[python]": {
-        
-    },
     "window.zoomLevel": -1,
     "explorer.confirmDragAndDrop": false,
     "search.exclude": {

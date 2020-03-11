@@ -83,9 +83,21 @@ Copy .bashrc file to home directory (i.e ~)
 Ctrl-z : Suspend current process.
 fg : Awake suspended process.
 
+
+## Install VSCode
+Find lastest installation instructions on the internet.
+
+### Useful VSCode plugins
+- Vim - vscodevim 
+- GitLens
+- Python
+- Pyright
+- Docker - Microsoft
+
+### Add VSCode settings
+Copy the settings.json file in the vscode directory into:
+~/.config/Code/User
+
 ## Install miniconda
-Find installation instructions on the internet.  
-Initialize conda with:
-``` bash
-conda init
-```
+Find latest installation instructions on the internet.  
+
