@@ -208,25 +208,29 @@ shopt -s histreedit
 shopt -s histverify
 # Avoid duplicates
 export HISTCONTROL=ignoreboth 
-export PROMPT_COMMAND="history -a;history -n;history -r;$PROMPT_COMMAND"
+
+to_add="history -a;history -n;history -r;"
+if ! [[ $PROMPT_COMMAND == *$to_add* ]]; then
+    export PROMPT_COMMAND="$to_add$PROMPT_COMMAND"
+fi
 
 # Set nvim as default editor.
 export EDITOR=/usr/bin/nvim
 
-# Function to initialise a tmux session with a set of windows and panes.
+# function to initialise a tmux session with a set of windows and panes.
 function tmux_init() {
     tmux \
         new-session -d -s auto \; \
         split-window -v \; \
         split-window -h \; \
-        select-pane -U \; \
+        select-pane -u \; \
         split-window -h -b \; \
         new-window \; \
         split-window -v \; \
         split-window -h \; \
-        select-pane -U \; \
+        select-pane -u \; \
         split-window -h -b \; \
-        send-keys -t 0 'htop' C-m \; \
+        send-keys -t 0 'htop' c-m \; \
         select-window -t 0 \; \
         attach-session
 }
