@@ -223,12 +223,12 @@ function tmux_init() {
         new-session -d -s auto \; \
         split-window -v \; \
         split-window -h \; \
-        select-pane -u \; \
+        select-pane -U \; \
         split-window -h -b \; \
         new-window \; \
         split-window -v \; \
         split-window -h \; \
-        select-pane -u \; \
+        select-pane -U \; \
         split-window -h -b \; \
         send-keys -t 0 'htop' c-m \; \
         select-window -t 0 \; \
