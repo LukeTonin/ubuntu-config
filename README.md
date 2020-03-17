@@ -106,5 +106,3 @@ The current best way to install is through the software center.
 The app is named "system-monitor" and has a sub name "GNOME Shell Extension".
 The website of the extension is: https://extensions.gnome.org/extension/120/system-monitor/
 The github page describes a few dependencies that might need to be installed.
-
-
