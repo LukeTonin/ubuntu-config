@@ -234,3 +234,5 @@ function tmux_init() {
         select-window -t 0 \; \
         attach-session
 }
+
+echo "In bashrc experiment"
