@@ -2,11 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# NOTE FROM LUKE: commented because prevents bashrc from being rerun by /bin/bash
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+# case $- in
+#     *i*) ;;
+#       *) return;;
+# esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -234,5 +235,3 @@ function tmux_init() {
         select-window -t 0 \; \
         attach-session
 }
-
-echo "In bashrc experiment"
