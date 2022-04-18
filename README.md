@@ -94,6 +94,13 @@ Find lastest installation instructions on the internet.
 - Pyright
 - Docker - Microsoft
 
+A full list of plugins can be found in the vscode directory of this repo.
+To start vscode with those extensions run:
+```
+cat vscode-extensions.list | xargs -L 1 code --install-extension
+```
+
+
 ### Add VSCode settings
 Copy the settings.json file in the vscode directory into:
 ~/.config/Code/User

@@ -208,12 +208,10 @@ shopt -s histappend
 shopt -s histreedit
 shopt -s histverify
 # Avoid duplicates
-export HISTCONTROL=ignoreboth 
-
-to_add="history -a;history -n;history -r;"
-if ! [[ $PROMPT_COMMAND == *$to_add* ]]; then
-    export PROMPT_COMMAND="$to_add$PROMPT_COMMAND"
-fi
+# This solution comes from here:
+# https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history
+HISTCONTROL=ignoreboth:erasedups
+PROMPT_COMMAND="history -n; history -w; history -c; history -r;$PROMPT_COMMAND" 
 
 # Set nvim as default editor.
 export EDITOR=/usr/bin/nvim
