@@ -1,32 +1,42 @@
 {
-    "python.dataScience.sendSelectionToInteractiveWindow": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.autoSave": "afterDelay",
-    "explorer.confirmDelete": true,
-    "vim.useCtrlKeys": false,
-    "vim.handleKeys": {
-        "<C-o>": true,
-        "<C-i>": true,
-        "<C-r>": true,
-        "<C-v>": true,
+    "python.formatting.autopep8Args": ["--max-line-length=120"],
+    "[json]": {
+        "editor.defaultFormatter": "j-brooke.fracturedjsonvsc"
     },
+    "editor.defaultFormatter": "ms-python.vscode-pylance",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "vim.debug.loggingLevelForConsole": "error",
+    "vim.easymotion": true,
+    "vim.overrideCopy": false,
     "vim.useSystemClipboard": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
+    "vim.leader": "<space>",
+    "vim.useCtrlKeys": true,
+    "vim.insertModeKeyBindings": [
         {
-            "before": ["u"],
-            "commands": ["undo"]
-        },
-        {
-            "before": ["<C-r>"],
-            "commands": ["redo"]
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
         }
     ],
-    "python.linting.pylintEnabled": true,
-    "python.formatting.autopep8Args": ["--aggressive", "--max-line-length", "90"],
-    "window.zoomLevel": -1,
-    "explorer.confirmDragAndDrop": false,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["ctrl+j"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["ctrl+k"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+
+    ],
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-w>": false,
+    },
     "search.exclude": {
         ".attic": true,
         ".archive": true,
-    },
+    }
 }

@@ -100,10 +100,16 @@ To start vscode with those extensions run:
 cat vscode-extensions.list | xargs -L 1 code --install-extension
 ```
 
-
 ### Add VSCode settings
 Copy the settings.json file in the vscode directory into:
 ~/.config/Code/User
+
+### VScode with vscodevim plugin.
+See useful settings for vscode in the vscode/settings.json file.
+** Example commands: **
+- `<space> <space> s <any-key>`: find any key in the currently open file (this is an easymotion funcitonality.)
+- `<ctrl+j>` or `<ctrl+k>`: Switch between left and right tab in VScode.
+
 
 ## Install miniconda
 Find latest installation instructions on the internet.  
@@ -113,3 +119,6 @@ The current best way to install is through the software center.
 The app is named "system-monitor" and has a sub name "GNOME Shell Extension".
 The website of the extension is: https://extensions.gnome.org/extension/120/system-monitor/
 The github page describes a few dependencies that might need to be installed.
+
+## Add vimium extension to chromium browser:
+https://github.com/philc/vimium
